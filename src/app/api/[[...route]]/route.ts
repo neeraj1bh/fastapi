@@ -1,6 +1,7 @@
-import { Redis } from "@upstash/redis";
+import { Redis } from "@upstash/redis/cloudflare";
 import { Hono } from "hono";
 import { env } from "hono/adapter";
+import { cors } from "hono/cors";
 import { handle } from "hono/vercel";
 
 // deploying to vercel
@@ -13,6 +14,7 @@ type EnvConfig = {
 
 const app = new Hono().basePath("/api");
 
+app.use("/*", cors());
 app.get("/search", async (c) => {
   try {
     const { REDIS_URL, REDIS_TOKEN } = env<EnvConfig>(c);

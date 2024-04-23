@@ -21,7 +21,7 @@ export default function Home() {
     const fetchData = async () => {
       if (!input) return setSearchResults(undefined);
 
-      const res = await fetch(`/api/search?q=${input}`);
+      const res = await fetch(`https://fastapi.nb9t7.workers.dev/api/search?q=${input}`);
       const data: { results: string[]; duration: number; message: string } =
         await res.json();
 
