@@ -1,0 +1,6 @@
+name = "fastapi"
+compatibility_date = "2024-04-23"
+
+[vars]
+REDIS_URL=
+REDIS_TOKEN=
