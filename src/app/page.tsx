@@ -27,6 +27,7 @@ export default function Home() {
         onChange={(e) => setInput(e.target.value)}
         type="text"
         placeholder="Search for a country"
+        className="text-zinc-900"
       />
     </div>
   );
